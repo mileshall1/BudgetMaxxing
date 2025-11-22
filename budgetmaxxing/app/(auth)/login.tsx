@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   Alert,
+  Image,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
@@ -90,10 +91,9 @@ export default function LoginScreen() {
       <View style={styles.content}>
         <View style={styles.headerRow}>
           <View style={styles.logoBox}>
-            <MaterialCommunityIcons
-              name="wallet-outline"
-              size={40}
-              color="#fff"
+            <Image
+            source={require('../../assets/images/logo.png')}
+            style={{ width: 300, height: 200, marginBottom: 4, resizeMode: 'contain' }}
             />
           </View>
         </View>
@@ -245,7 +245,6 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     borderRadius: 24,
-    backgroundColor: "#000",
     justifyContent: "center",
     alignItems: "center",
     marginRight: spacing.md,
