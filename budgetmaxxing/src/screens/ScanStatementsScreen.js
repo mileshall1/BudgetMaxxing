@@ -8,9 +8,7 @@ export default function ScanStatementsScreen() {
       <Text style={styles.title}>Scan Statements</Text>
 
       <Image
-        source={{
-          uri: "https://i.ibb.co/zPD7dx6/bank-statement-scan.png", // You can replace with local image in assets
-        }}
+        source={require('../../assets/images/bank-statement.png')}
         style={styles.statementImage}
         resizeMode="contain"
       />
