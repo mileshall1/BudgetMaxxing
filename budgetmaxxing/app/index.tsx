@@ -1,5 +1,5 @@
-import { Redirect } from "expo-router";
+import LoadingScreen from "../src/screens/LoadingScreen";
 
 export default function Index() {
-  return <Redirect href="/(auth)/login" />;
+  return <LoadingScreen />;
 }
