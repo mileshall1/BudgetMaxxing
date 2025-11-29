@@ -1,5 +1,5 @@
-import LoginScreen from "../src/screens/LoginScreen";
+import LoadingScreen from "../src/screens/LoadingScreen";
 
 export default function Index() {
-  return <LoginScreen />;
+  return <LoadingScreen />;
 }

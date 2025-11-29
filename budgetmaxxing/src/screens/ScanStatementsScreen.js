@@ -7,6 +7,7 @@ export default function ScanStatementsScreen() {
   // State to hold the URI of the scanned document for preview
   const [scannedImageUri, setScannedImageUri] = useState(null);
 
+
   const handleImagePicked = (uri) => {
     if (uri) {
       // **SET THE SCANNED IMAGE URI TO STATE FOR PREVIEW**
@@ -17,6 +18,7 @@ export default function ScanStatementsScreen() {
       console.log("Operation cancelled");
     }
   };
+
 
   const openCamera = async () => {
    

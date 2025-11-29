@@ -1,15 +1,26 @@
 import React from "react";
 import {
-  SafeAreaView,
   ScrollView,
   View,
   Text,
   TouchableOpacity,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { colors, spacing } from "../theme";
+import { useAuth } from "../auth-context";
 
 export default function UserScreen() {
+  const { signOut, user } = useAuth();
+
+  async function handleLogout() {
+    try {
+      await signOut();
+    } catch (err) {
+      console.error("Failed to sign out", err);
+    }
+  }
+
   return (
     <SafeAreaView
       style={{
@@ -55,7 +66,7 @@ export default function UserScreen() {
                 color: colors.text,
               }}
             >
-              First Last
+              {user?.email || "Current user"}
             </Text>
             <Text
               style={{
@@ -64,7 +75,7 @@ export default function UserScreen() {
                 marginTop: 2,
               }}
             >
-              first.last@email.com
+              {user?.email || "Signed in"}
             </Text>
           </View>
 
@@ -104,7 +115,10 @@ export default function UserScreen() {
         <UserRow label="Statements" />
         <UserRow label="Goals & Budgets" />
 
-        <TouchableOpacity style={{ marginTop: spacing.lg }}>
+        <TouchableOpacity
+          style={{ marginTop: spacing.lg }}
+          onPress={handleLogout}
+        >
           <Text
             style={{
               fontSize: 16,
