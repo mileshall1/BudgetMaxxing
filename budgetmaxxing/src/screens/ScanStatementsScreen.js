@@ -98,8 +98,6 @@ export default function ScanStatementsScreen() {
      
 
       <Text style={styles.subtitle}>{subtitleText}</Text>
-
-      {/* **CONTROL BUTTONS** */}
       <View style={styles.buttonContainer}>
         {/* NEW: Library Upload Button */}
         <TouchableOpacity style={styles.libraryButton} onPress={openImageLibrary}>
